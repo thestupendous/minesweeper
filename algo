@@ -1,0 +1,10 @@
+algorithm
+  - place n number of mines randomly on board of size p*q
+  - do the numbering for all cells (update the proximity-matrix)
+  - for every move of user (x,y), keep updating the visible-matrix 
+
+data structures 
+  - variables p,q holding max size of board
+  - mine coordinates list. A list of pair of coordinates for each mine
+  - proximity-matrix
+  - visibility-matrix
