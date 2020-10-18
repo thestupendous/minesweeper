@@ -15,3 +15,11 @@ proximity matrix creation techniques
   - for each "direction" process each element coming
 
   - for each mine, process its neighbours.
+
+tracking to the mine (updating visibility board)
+  - if coordinates provided by the user are directly at a mine, game quits
+  - if coordinates are at a cell that has value zero in proximity matrix,
+		- make it visible,
+		- keep traversing in all four directions and make them visible untill you keep hitting zeroes.
+		when you hit a number > 0, make it visible, stop
+  - if coordinates are at a cell that has number > 0, make it visible

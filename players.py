@@ -8,24 +8,25 @@ def printm(mat):
             print(mat[i][j], ' ',end='')
         print()
 
-a= []
+play_board= []
 for i in range(m):
     b = [ 0 for x in range(n) ]
-    a.append(b)
+    play_board.append(b)
 
+#setting mines
 mines = []
 for i in range(p):
     x,y = map(int,input().split())
     mines.append((x,y))
 
 print(mines)
-printm(a)
+printm(play_board)
 
 
 #------------create-the-proximity-matrix-------------------
 
 proxi_mat = []
-#initialise proxi mat with zeroes
+#initialise proximity matrix with zeroes
 for i in range(m):
     b = [ 0 for x in range(n) ]
     proxi_mat.append(b)
@@ -35,7 +36,7 @@ for mine in mines:
     x,y = mine[0],mine[1]
     proxi_mat[x][y] = -1
 
-printm(proxi_mat)
+#printm(proxi_mat)
 
 #checking if coordinate exists in board
 def ex(x,y,m,n):
@@ -44,14 +45,15 @@ def ex(x,y,m,n):
     if x>=m or y>=n :
         return False
     return True
+
 #function to actually set up the proximity matrix
 def process_mines(proxi_mat,mines):
     for mine in mines:
         #print(mine[0],mine[1])
         m,n = len(proxi_mat),len(proxi_mat[0])
         x,y = int(mine[0]),int(mine[1])
-        print('for mine ',mine,x,y)
-        print(type(mine),type(x),type(y))
+#        print('for mine ',mine,x,y)
+#        print(type(mine),type(x),type(y))
         if ex(x-1,y-1,m,n) and proxi_mat[x-1][y-1]!=-1 :
             proxi_mat[x-1][y-1]+=1
 
@@ -80,5 +82,14 @@ process_mines(proxi_mat,mines)
 #printm(proxi_mat)
 
 
+#------------------------------------------------------------------------
 
+over=False
+while not over:
+    x,y = map(int,input().split())
+    if (x,y) in mines:
+        over=True
+        
+
+print("game over!!  Try Again")
 
