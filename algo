@@ -1,5 +1,5 @@
 algorithm
-  - place n number of mines randomly on board of size p*q
+  - place p number of mines randomly on board of size m*n
   - do the numbering for all cells (update the proximity-matrix)
   - for every move of user (x,y), keep updating the visible-matrix 
 
@@ -8,3 +8,10 @@ data structures
   - mine coordinates list. A list of pair of coordinates for each mine
   - proximity-matrix
   - visibility-matrix
+
+proximity matrix creation techniques
+  - for each element, process its all neighbours
+
+  - for each "direction" process each element coming
+
+  - for each mine, process its neighbours.
