@@ -1,5 +1,5 @@
 m,n  = 5,5
-p = 2
+p = 4
 
 def printm(mat):
     for i in range(len(mat)):

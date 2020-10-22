@@ -21,5 +21,8 @@ tracking to the mine (updating visibility board)
   - if coordinates are at a cell that has value zero in proximity matrix,
 		- make it visible,
 		- keep traversing in all four directions and make them visible untill you keep hitting zeroes.
-		when you hit a number > 0, make it visible, stop
+		you hit a number > 0, make it visible, stop
+		 - **Use bfs (only up-down-left-right motion allowed, no diagonal motion)
   - if coordinates are at a cell that has number > 0, make it visible
+
+

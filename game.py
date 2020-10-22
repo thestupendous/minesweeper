@@ -22,6 +22,10 @@ for i in range(p):
 print(mines)
 printm(play_board)
 
+#------------updating-play_board-for-every-move-----------
+
+def move(x,y,play_board,proxi_mat,mines):
+
 
 #------------create-the-proximity-matrix-------------------
 
@@ -87,8 +91,11 @@ process_mines(proxi_mat,mines)
 over=False
 while not over:
     x,y = map(int,input().split())
-    if (x,y) in mines:
-        over=True
+    if (x,y) in mines:  #case when user is stepped on a mine
+        break
+    over=move(x,y,play_board,proxi_mat,mines)
+    if over:
+        break
         
 
 print("game over!!  Try Again")
