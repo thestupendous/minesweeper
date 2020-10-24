@@ -22,7 +22,7 @@ tracking to the mine (updating visibility board)
 		- make it visible,
 		- keep traversing in all four directions and make them visible untill you keep hitting zeroes.
 		you hit a number > 0, make it visible, stop
-		 - **Use bfs (only up-down-left-right motion allowed, no diagonal motion)
+		 - **Use bfs (only up-down-left-right motion allowed, no diagonal motion) and stop when a non zero cell is reached, making it visible.
   - if coordinates are at a cell that has number > 0, make it visible
 
 

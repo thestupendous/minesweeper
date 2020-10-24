@@ -24,21 +24,7 @@ printm(play_board)
 
 #------------updating-play_board-for-every-move-----------
 
-def move(x,y,play_board,proxi_mat,mines):  #returns touple (over,won)
-    m,n = len(proxi_mat), len(proxi_mat[0])
-    p = len(mines)
-    if proxi_mat[x][y] > 0:
-        play_board[x][y]=proxi_mat[x][y]
-        return (False,False)
-    if proxi_mat[x][y] == 0:
-        #do bfs untill keep hitting 0's
-        visited=[]
-        queue=[(x,y)]
-        while len(queue) != 0:
-
-
-        
-
+def move(x,y,play_board,proxi_mat,mines):
 
 
 #------------create-the-proximity-matrix-------------------
@@ -103,15 +89,14 @@ process_mines(proxi_mat,mines)
 #------------------------------------------------------------------------
 
 over=False
-won=False
 while not over:
     x,y = map(int,input().split())
     if (x,y) in mines:  #case when user is stepped on a mine
         break
-    over,won=move(x,y,play_board,proxi_mat,mines)
+    over=move(x,y,play_board,proxi_mat,mines)
     if over:
         break
         
-if !won :
-    print("game over!!  Try Again")
+
+print("game over!!  Try Again")
 
